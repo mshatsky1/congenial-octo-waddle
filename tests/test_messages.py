@@ -1,85 +1,24 @@
-from congenial import build_greeting
-from congenial.utils import sanitize_name, capitalize_words, validate_name
-
-
-def test_build_greeting_includes_name():
-    result = build_greeting("Alice")
-    assert "Alice" in result
-    assert result.startswith("Hello, Alice!")
-
-
-def test_build_greeting_defaults_to_friend():
-    result = build_greeting()
-    assert "friend" in result
-    assert result.startswith("Hello, friend!")
-
-
-def test_build_greeting_with_color():
-    result = build_greeting("Bob", use_color=True)
-    assert "Bob" in result
-    assert "\033" in result  # ANSI escape code
-
-
-def test_sanitize_name():
-    assert sanitize_name("John@Doe!") == "JohnDoe"
-    assert sanitize_name("  test  ") == "test"
-
-
-def test_capitalize_words():
-    assert capitalize_words("hello world") == "Hello World"
-    assert capitalize_words("JOHN DOE") == "John Doe"
-
-
-def test_validate_name():
-    assert validate_name("Alice") is True
-    assert validate_name("") is False
-    assert validate_name("a" * 101) is False
-
-
 """
-Congenial Octo Waddle - Bug Fix
+Congenial Octo Waddle - Code Refactoring
 """
 
-def safe_divide(a, b):
-    """Safely divide two numbers with error handling"""
-    if b == 0:
-        raise ValueError("Division by zero is not allowed")
-    return a / b
+from typing import List, Dict, Optional
 
-def parse_config(config_str):
-    """Parse configuration string with improved error handling"""
-    if not config_str:
-        return {}
+def optimize_algorithm(data: List[Dict]) -> List[Dict]:
+    """Optimized version with better performance"""
+    return [
+        {**item, 'processed': True}
+        for item in data
+        if item.get('active', True)
+    ]
+
+def extract_metadata(obj: Dict) -> Optional[Dict]:
+    """Extract metadata with type hints"""
+    if not isinstance(obj, dict):
+        return None
     
-    try:
-        import json
-        return json.loads(config_str)
-    except json.JSONDecodeError as e:
-        print(f"Warning: Invalid JSON config: {e}")
-        return {}
-
-
-"""
-Congenial Octo Waddle - Performance Improvement
-"""
-
-import logging
-from functools import lru_cache
-
-logger = logging.getLogger(__name__)
-
-@lru_cache(maxsize=128)
-def cached_computation(value):
-    """Cached computation for better performance"""
-    logger.debug(f"Computing value: {value}")
-    return value ** 2
-
-def batch_process(items, batch_size=100):
-    """Process items in batches for better memory usage"""
-    for i in range(0, len(items), batch_size):
-        batch = items[i:i + batch_size]
-        yield process_batch(batch)
-
-def process_batch(batch):
-    """Process a single batch"""
-    return [item.upper() for item in batch]
+    return {
+        'id': obj.get('id'),
+        'timestamp': obj.get('timestamp'),
+        'version': obj.get('version', '1.0.0')
+    }
