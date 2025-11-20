@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "congenial"
+version = "0.1.0"
+description = "Tiny sandbox package"
+authors = [{ name = "Michael Shatsky" }]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+congenial-greet = "congenial.cli:main"
