@@ -3,6 +3,8 @@ from __future__ import annotations
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
+from .cli import CongenialError
+
 
 # ANSI color codes
 COLORS = {
@@ -29,8 +31,11 @@ def build_greeting(
         style: Greeting style - 'standard', 'casual', or 'formal'
     """
     if timezone:
-        tz = ZoneInfo(timezone)
-        timestamp = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S %Z")
+        try:
+            tz = ZoneInfo(timezone)
+            timestamp = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S %Z")
+        except Exception as e:
+            raise CongenialError(f"Invalid timezone: {timezone}. {str(e)}")
     else:
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     
