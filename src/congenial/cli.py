@@ -7,11 +7,20 @@ from .messages import build_greeting
 
 
 class CongenialError(Exception):
-    """Base exception for congenial package."""
+    """Base exception for congenial package.
+    
+    This exception is raised when there's an error in the congenial package,
+    such as invalid input or configuration issues.
+    """
     pass
 
 
 def main() -> None:
+    """Main entry point for the congenial CLI.
+    
+    Parses command-line arguments and prints a greeting message.
+    Handles errors gracefully and exits with appropriate status codes.
+    """
     try:
         parser = argparse.ArgumentParser(description="Print a tiny greeting")
         parser.add_argument("name", nargs="?", default="friend", help="Who to greet")
