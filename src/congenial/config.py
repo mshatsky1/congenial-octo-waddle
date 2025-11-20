@@ -2,9 +2,10 @@ from __future__ import annotations
 
 import tomli
 from pathlib import Path
+from typing import Any
 
 
-def load_config(config_path: Path | None = None) -> dict:
+def load_config(config_path: Path | None = None) -> dict[str, Any]:
     """Load configuration from TOML file.
     
     Args:
