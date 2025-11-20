@@ -20,9 +20,18 @@ def main() -> None:
     
     Parses command-line arguments and prints a greeting message.
     Handles errors gracefully and exits with appropriate status codes.
+    
+    Examples:
+        $ congenial-greet Alice
+        $ congenial-greet Bob --color --style casual
+        $ congenial-greet --quiet
     """
     try:
-        parser = argparse.ArgumentParser(description="Print a tiny greeting")
+        parser = argparse.ArgumentParser(
+            description="Print a friendly greeting message with timestamp",
+            epilog="For more information, visit the project repository.",
+            formatter_class=argparse.RawDescriptionHelpFormatter
+        )
         parser.add_argument("name", nargs="?", default="friend", help="Who to greet")
         parser.add_argument("--version", action="version", version="%(prog)s 0.1.0")
         parser.add_argument("--color", action="store_true", help="Use colored output")
