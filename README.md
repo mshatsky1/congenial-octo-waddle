@@ -18,6 +18,25 @@ A tiny sandbox repository for trying out tooling experiments.
 - Lightweight Python package structure.
 - Simple CLI entry point for experimentation.
 - Basic unit test illustrating usage.
+- Color support for terminal output (`--color` flag).
+- Configuration file support (congenial.toml).
+- Logging functionality for debugging.
+- Utility functions for name sanitization and validation.
+- Error handling with custom exceptions.
+- Version command (`--version`).
+
+## Usage Examples
+
+```bash
+# Basic greeting
+python -m congenial.cli Alice
+
+# With colored output
+python -m congenial.cli Bob --color
+
+# Show version
+python -m congenial.cli --version
+```
 
 ## License
 
