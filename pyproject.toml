@@ -9,7 +9,7 @@ description = "Tiny sandbox package"
 authors = [{ name = "Michael Shatsky" }]
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = []
+dependencies = ["tomli>=2.0.0"]
 
 [project.scripts]
 congenial-greet = "congenial.cli:main"
