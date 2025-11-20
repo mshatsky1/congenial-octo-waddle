@@ -26,12 +26,18 @@ def main() -> None:
         parser.add_argument("name", nargs="?", default="friend", help="Who to greet")
         parser.add_argument("--version", action="version", version="%(prog)s 0.1.0")
         parser.add_argument("--color", action="store_true", help="Use colored output")
+        parser.add_argument(
+            "--style",
+            choices=["standard", "casual", "formal"],
+            default="standard",
+            help="Greeting style"
+        )
         args = parser.parse_args()
         
         if not args.name or len(args.name.strip()) == 0:
             raise CongenialError("Name cannot be empty")
         
-        print(build_greeting(args.name, use_color=args.color))
+        print(build_greeting(args.name, use_color=args.color, style=args.style))
     except CongenialError as e:
         print(f"Error: {e}", file=sys.stderr)
         sys.exit(1)

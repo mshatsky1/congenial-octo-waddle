@@ -16,7 +16,8 @@ COLORS = {
 def build_greeting(
     name: str = "friend",
     use_color: bool = False,
-    timezone: str | None = None
+    timezone: str | None = None,
+    style: str = "standard"
 ) -> str:
     """Return a friendly greeting with a timestamp.
     
@@ -25,6 +26,7 @@ def build_greeting(
         use_color: Whether to use ANSI color codes in output
         timezone: Optional timezone string (e.g., 'America/New_York').
                   If None, uses system local time.
+        style: Greeting style - 'standard', 'casual', or 'formal'
     """
     if timezone:
         tz = ZoneInfo(timezone)
@@ -32,7 +34,15 @@ def build_greeting(
     else:
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     
-    greeting = f"Hello, {name}! ({timestamp})"
+    # Different greeting styles
+    styles = {
+        "standard": f"Hello, {name}!",
+        "casual": f"Hey, {name}!",
+        "formal": f"Good day, {name}.",
+    }
+    
+    greeting_template = styles.get(style, styles["standard"])
+    greeting = f"{greeting_template} ({timestamp})"
     
     if use_color:
         greeting = f"{COLORS['green']}{greeting}{COLORS['reset']}"
