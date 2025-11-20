@@ -13,3 +13,12 @@ dependencies = ["tomli>=2.0.0"]
 
 [project.scripts]
 congenial-greet = "congenial.cli:main"
+
+[tool.black]
+line-length = 88
+target-version = ['py310']
+include = '\.pyi?$'
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
