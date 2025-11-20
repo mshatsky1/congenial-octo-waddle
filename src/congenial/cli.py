@@ -32,12 +32,14 @@ def main() -> None:
             default="standard",
             help="Greeting style"
         )
+        parser.add_argument("--quiet", "-q", action="store_true", help="Suppress output")
         args = parser.parse_args()
         
         if not args.name or len(args.name.strip()) == 0:
             raise CongenialError("Name cannot be empty")
         
-        print(build_greeting(args.name, use_color=args.color, style=args.style))
+        if not args.quiet:
+            print(build_greeting(args.name, use_color=args.color, style=args.style))
     except CongenialError as e:
         print(f"Error: {e}", file=sys.stderr)
         sys.exit(1)
