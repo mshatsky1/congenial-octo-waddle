@@ -1,0 +1,3 @@
+[greeter]
+default_name = "friend"
+show_timestamp = true
