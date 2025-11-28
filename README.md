@@ -42,6 +42,15 @@ python -m congenial.cli Bob --color
 python -m congenial.cli --version
 ```
 
+## Logging Example
+
+```python
+from congenial.logger import setup_logger
+
+logger = setup_logger()
+logger.info("Greeter ready")
+```
+
 ## License
 
 Released under the MIT License.
