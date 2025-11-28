@@ -7,6 +7,7 @@ A tiny sandbox repository for trying out tooling experiments.
 1. Create a virtual environment with `python -m venv .venv`.
 2. Activate it and install dependencies via `pip install -e .`.
 3. Run `python -m congenial.cli` or `scripts/run.sh` to print a friendly message.
+4. Prefer the installed entry point via `congenial-greet` once the package is installed.
 
 ## Testing
 
