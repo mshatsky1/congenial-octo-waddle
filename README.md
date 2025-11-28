@@ -51,6 +51,14 @@ logger = setup_logger()
 logger.info("Greeter ready")
 ```
 
+## FAQ
+
+**Why do I see timestamps in greetings?**  
+Timestamps make it easy to tell when a message was generated; disable them by editing `congenial.toml`.
+
+**How do I change the default greeting name?**  
+Set `CONGENIAL_NAME` in `.env` or update the config file.
+
 ## License
 
 Released under the MIT License.
