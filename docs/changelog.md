@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added tips for contributors, environment setup, and FAQ guidance.
 - Added version command to CLI (`--version` flag)
 - Added color support for terminal output (`--color` flag)
 - Added configuration file support (congenial.toml)
