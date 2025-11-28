@@ -31,6 +31,9 @@ A tiny sandbox repository for trying out tooling experiments.
 # Basic greeting
 python -m congenial.cli Alice
 
+# Greet someone in a specific timezone
+python -m congenial.cli Carol --style formal --color
+
 # With colored output
 python -m congenial.cli Bob --color
 
