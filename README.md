@@ -13,6 +13,7 @@ A tiny sandbox repository for trying out tooling experiments.
 
 - Install dev dependencies (currently none) and run `pytest`.
 - Set `PYTHONPATH=src` if you do not install the package first.
+- Run `pytest -q` for a terse test report when iterating quickly.
 
 ## Features
 
