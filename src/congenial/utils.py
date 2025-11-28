@@ -1,3 +1,5 @@
+"""Utility helpers for working with user-provided names."""
+
 from __future__ import annotations
 
 import re
