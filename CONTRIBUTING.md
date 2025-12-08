@@ -7,5 +7,6 @@ Thanks for exploring this sandbox repo! To keep things simple:
 3. Run `pytest` before opening a pull request.
 4. Keep changes small and easy to review.
 5. Mention any new scripts or commands in the README.
+6. Follow the code style defined in `.editorconfig` and `.flake8`.
 
 Happy tinkering!
