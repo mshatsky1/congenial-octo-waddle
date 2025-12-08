@@ -5,6 +5,20 @@
 
 A tiny sandbox repository for trying out tooling experiments.
 
+## Installation
+
+Install the package in development mode:
+
+```bash
+pip install -e .
+```
+
+Or use the setup script:
+
+```bash
+./scripts/setup.sh
+```
+
 ## Quickstart
 
 1. Create a virtual environment with `python -m venv .venv`.
