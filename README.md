@@ -1,6 +1,7 @@
 # congenial-octo-waddle
 
 ![Version](https://img.shields.io/badge/version-0.1.0-blue)
+![Status](https://img.shields.io/badge/status-active-success)
 
 A tiny sandbox repository for trying out tooling experiments.
 
