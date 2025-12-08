@@ -77,6 +77,14 @@ Timestamps make it easy to tell when a message was generated; disable them by ed
 **How do I change the default greeting name?**  
 Set `CONGENIAL_NAME` in `.env` or update the config file.
 
+## Troubleshooting
+
+**Import errors?**  
+Make sure you've installed the package with `pip install -e .` or set `PYTHONPATH=src`.
+
+**Command not found?**  
+After installation, use `congenial-greet` instead of `python -m congenial.cli`.
+
 ## License
 
 Released under the MIT License. See [LICENSE](LICENSE) for details.
