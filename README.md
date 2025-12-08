@@ -62,4 +62,4 @@ Set `CONGENIAL_NAME` in `.env` or update the config file.
 
 ## License
 
-Released under the MIT License.
+Released under the MIT License. See [LICENSE](LICENSE) for details.
