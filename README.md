@@ -85,6 +85,12 @@ Make sure you've installed the package with `pip install -e .` or set `PYTHONPAT
 **Command not found?**  
 After installation, use `congenial-greet` instead of `python -m congenial.cli`.
 
+## Related Projects
+
+This is a sandbox repository for experimentation. For production Python packages, consider:
+- [Poetry](https://python-poetry.org/) for dependency management
+- [setuptools](https://setuptools.pypa.io/) for packaging
+
 ## License
 
 Released under the MIT License. See [LICENSE](LICENSE) for details.
