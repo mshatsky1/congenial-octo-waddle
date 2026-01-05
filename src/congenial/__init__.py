@@ -1,6 +1,21 @@
-"""Tiny helpers for congenial-octo-waddle experiments."""
+"""
+Congenial Octo Waddle - Bug Fix
+"""
 
-from .messages import build_greeting
+def safe_divide(a, b):
+    """Safely divide two numbers with error handling"""
+    if b == 0:
+        raise ValueError("Division by zero is not allowed")
+    return a / b
 
-__version__ = "0.1.0"
-__all__ = ["build_greeting", "__version__"]
+def parse_config(config_str):
+    """Parse configuration string with improved error handling"""
+    if not config_str:
+        return {}
+    
+    try:
+        import json
+        return json.loads(config_str)
+    except json.JSONDecodeError as e:
+        print(f"Warning: Invalid JSON config: {e}")
+        return {}
