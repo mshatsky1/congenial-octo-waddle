@@ -1,25 +1,21 @@
-from __future__ import annotations
+"""
+Congenial Octo Waddle - Bug Fix
+"""
 
-import tomli
-from pathlib import Path
-from typing import Any
+def safe_divide(a, b):
+    """Safely divide two numbers with error handling"""
+    if b == 0:
+        raise ValueError("Division by zero is not allowed")
+    return a / b
 
-
-def load_config(config_path: Path | None = None) -> dict[str, Any]:
-    """Load configuration from TOML file.
-    
-    Args:
-        config_path: Path to config file. If None, looks for congenial.toml in current dir.
-    
-    Returns:
-        Dictionary with configuration values
-    """
-    if config_path is None:
-        config_path = Path("congenial.toml")
-    
-    if not config_path.exists():
+def parse_config(config_str):
+    """Parse configuration string with improved error handling"""
+    if not config_str:
         return {}
     
-    with open(config_path, "rb") as f:
-        return tomli.load(f)
-
+    try:
+        import json
+        return json.loads(config_str)
+    except json.JSONDecodeError as e:
+        print(f"Warning: Invalid JSON config: {e}")
+        return {}
